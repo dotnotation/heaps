@@ -27,6 +27,23 @@ class MaxBinaryHeap{
             idx = parentIdx
         }
     }
+
+    extractMax(){
+        // swap the first value in the values property with the last one
+        // pop from the values property to return the value at the end
+        // have the new root sink down to the correct spot
+    }
+
+    sinkDown(){
+        // parent index starts at 0 (the root)
+        // find the index of the left child (2 * index + 1) 
+        // find the index of the right child (e * index + 2)
+        // if the left or right child is greater than the element, swap
+        // if both left and right child are larger, swap with the largest child
+        // the child index you swapped is now the new parent index
+        // keep swapping until neither child is larger than the element
+        // return old root
+    }
 }
 
 let heap = new MaxBinaryHeap()
