@@ -33,9 +33,12 @@ class MaxBinaryHeap{
         const max = this.values[0]
         // pop from the values property to return the value at the end
         const end = this.values.pop()
-        this.values[0] = end
-        // have the new root sink down to the correct spot
-        this.sinkDown()
+        // need to account for the array only having one value and needing to make the array empty
+        if (this.values.length > 0){
+            this.values[0] = end
+            // have the new root sink down to the correct spot
+            this.sinkDown()
+        }
         return max
     }
 
@@ -71,9 +74,12 @@ class MaxBinaryHeap{
                 }
             }
         // if both left and right child are larger, swap with the largest child
-        // the child index you swapped is now the new parent index
         // keep swapping until neither child is larger than the element
             if (swap === null) break
+            this.values[idx] = this.values[swap]
+            this.values[swap] = element
+            // the child index you swapped is now the new parent index
+            idx = swap
         // return old root
         }
     }
