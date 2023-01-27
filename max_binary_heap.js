@@ -19,12 +19,12 @@ class MaxBinaryHeap{
             // create a variable called parentIndex which is the floor of (index - 1)/2
             let parentIdx = Math.floor((idx - 1) / 2)
             let parent = this.values[parentIdx]
-            if (element > parent){
-                // SWAP the value of the values element at the parentIndex with the value of the element property at the child index
-                this.values[parentIdx] = element
-                // set the index to be the parentIndex
-                this.values[idx] = parent
-            }
+            if (element <= parent) break 
+            // SWAP the value of the values element at the parentIndex with the value of the element property at the child index
+            this.values[parentIdx] = element
+            // set the index to be the parentIndex
+            this.values[idx] = parent
+            idx = parentIdx
         }
     }
 }
