@@ -28,3 +28,8 @@ Binary Heaps
 		- Class Name: MaxBinaryHeap
 		- Properties: values = []
 	- Adding to MaxBinaryHeap: add to the end and bubble up
+	- Removing from MaxBinaryHeap (extract max value)
+		- remove the root
+		- replace with the most recently added
+		- adjust (sink down)
+			- sink down is the procedure for deleting the root from the heap by extracting the maximum element in a max-heap or the minimum element in a min-heap and restoring the properties is called down-heap, bubble-down, percolate-down, sift-down, trickle down, heapify-down, cascade-down, and extract-min/max
