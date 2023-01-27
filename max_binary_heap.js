@@ -15,7 +15,7 @@ class MaxBinaryHeap{
         let idx = this.values.length - 1
         const element = this.values[idx]
         // keep looping as long as the values element at the parentIndex is less than the values element at the child index
-        while(true){
+        while(idx > 0){
             // create a variable called parentIndex which is the floor of (index - 1)/2
             let parentIdx = Math.floor((idx - 1) / 2)
             let parent = this.values[parentIdx]
