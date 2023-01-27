@@ -21,6 +21,7 @@ Binary Heaps
 	- compact as possible 
 		- every left and right are filled out before moving up
 	- used to implement priority queues and with graph traversal algorithms
+		- priority queue is a data structure where each element has a priority. Elements with higher priorities are served before elements with lower priorities.
 	- can use an array to store a binary heap
 	- for any index of an array (n) the left child is stored at 2n + 1 and the right child is at 2n + 2
 	- for any child node at index n, its parent is at index Math.Floor((n -1) / 2)
