@@ -28,7 +28,7 @@ class PriorityQueue{
         while (idx > 0){
             let parentIdx = Math.floor((idx -1) / 2)
             let parent = this.values[parentIdx]
-            if (element.priority <= parent.priority) break
+            if (element.priority >= parent.priority) break
             this.values[parentIdx] = element
             this.values[idx] = parent 
             idx = parentIdx
@@ -37,7 +37,7 @@ class PriorityQueue{
 
     dequeue(){
         // swap the first value in the values property with the last one
-        const max = this.values[0]
+        const min = this.values[0]
         // pop from the values property to return the value at the end
         const end = this.values.pop()
         // need to account for the array only having one value and needing to make the array empty
@@ -46,7 +46,7 @@ class PriorityQueue{
             // have the new root sink down to the correct spot
             this.sinkDown()
         }
-        return max
+        return min
     }
 
     sinkDown(){
@@ -66,7 +66,7 @@ class PriorityQueue{
         // if the left or right child is greater than the element, swap
             if (leftChildIdx < length){
                 leftChild = this.values[leftChildIdx]
-                if (leftChild.priority > element.priority){
+                if (leftChild.priority < element.priority){
                     swap = leftChildIdx
                 }
             }
@@ -74,8 +74,8 @@ class PriorityQueue{
             if (rightChildIdx < length){
                 rightChild = this.values[rightChildIdx]
                 if (
-                    (swap === null && rightChild.priority > element.priority) || 
-                    (swap !== null && rightChild.priority > leftChild.priority)
+                    (swap === null && rightChild.priority < element.priority) || 
+                    (swap !== null && rightChild.priority < leftChild.priority)
                 ){
                     swap = rightChildIdx
                 }
