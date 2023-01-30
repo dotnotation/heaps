@@ -8,6 +8,7 @@ What are heaps?
 
 Binary Heaps
     - this course mainly focuses on this type of heap
+	- best for insertion and removal
 	- two types: min and max heaps
 		- MaxBinaryHeap
 			- parent nodes are always larger than child nodes
@@ -17,6 +18,7 @@ Binary Heaps
 			- parent nodes are always smaller than child nodes
 			- root is always the smallest
 	- similar to a binary search tree, but with different rules
+		- unlike binary search trees, heaps have to be filled out row by row so you never have to worry about a structure that is weighted heavily on one side
 	- at most each parent can have two children 
 	- compact as possible 
 		- every left and right are filled out before moving up
@@ -34,3 +36,8 @@ Binary Heaps
 		- replace with the most recently added
 		- adjust (sink down)
 			- sink down is the procedure for deleting the root from the heap by extracting the maximum element in a max-heap or the minimum element in a min-heap and restoring the properties is called down-heap, bubble-down, percolate-down, sift-down, trickle down, heapify-down, cascade-down, and extract-min/max
+	- Big O
+		- Time: 
+			- Insertion O(log n)
+			- Removal O(log n)
+			- Search O(n)
